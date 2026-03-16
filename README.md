@@ -21,6 +21,18 @@
 - **Monthly Calendar**: A high-fidelity grid visualizing events and task deadlines.
 - **Entity Linking**: Associate tasks/events directly with Leads, Deals, or Accounts.
 
+#### 📸 Visual Previews
+
+| Tasks Management | Calendar View |
+| :---: | :---: |
+| ![Tasks Index](docs/screenshots/tasks_index.png) | ![Calendar View](docs/screenshots/calendar_view.png) |
+| *Managing global activities* | *Schedule & Deadlines* |
+
+### 📈 Lead & Deal Management
+- **Smart Leads**: Track sources, status, and conversion probability.
+- **Deals Kanban**: A visual drag-and-drop board for pipeline management.
+- **Pipeline Customization**: Configure multiple pipelines with dynamic stages.
+
 ### 💬 Communication Hub
 - **WhatsApp Integration**: Native chat interface for customer engagement.
 - **Activity Timeline**: Full audit trail of all interactions for every record.
