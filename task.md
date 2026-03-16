@@ -1,0 +1,21 @@
+# CRM Refinement Task List
+
+- [x] Phase 1: Authentication & Tenant Isolation
+- [x] Phase 2: Core Infrastructure (Roles/Permissions)
+- [x] Phase 3: WhatsApp Integration (Core Messaging)
+- [x] Phase 4: Lead Management & Conversion Logic
+- [x] Phase 5: Pipeline & Deals Refinement
+- [x] Phase 6: Accounts & Contacts Foundation
+- [x] Phase 7: Tasks & Calendar 🚀
+    - [x] Backend Controllers (Tasks, Calendar)
+    - [x] API Routes registration
+    - [x] Tasks Index page
+    - [x] Task Create/Update Form
+    - [x] Calendar View (Monthly Grid)
+    - [x] Event Create/Update Form
+    - [x] Navigation Integration
+    - [ ] Link Tasks to Leads/Deals/Accounts
+- [ ] Phase 8: Financials (Invoices & Payments)
+- [ ] Phase 9: Marketing (Email Campaigns)
+- [ ] Phase 10: Advanced Analytics & Dashboard
+- [ ] Phase 11: Polish & Final E2E Verification

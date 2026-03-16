@@ -28,7 +28,8 @@
 | ![Tasks Index](docs/screenshots/tasks_index.png) | ![Calendar View](docs/screenshots/calendar_view.png) |
 | *Managing global activities* | *Schedule & Deadlines* |
 
-### 📈 Lead & Deal Management
+### 💹 Leads & Pipelines
+
 - **Smart Leads**: Track sources, status, and conversion probability.
 - **Deals Kanban**: A visual drag-and-drop board for pipeline management.
 - **Pipeline Customization**: Configure multiple pipelines with dynamic stages.
