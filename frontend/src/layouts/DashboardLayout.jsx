@@ -7,10 +7,12 @@ import {
   Target, 
   CheckSquare, 
   MessageSquare,
+  FileText,
   LogOut,
   Settings,
   Bell,
-  Calendar as CalendarIcon
+  Calendar as CalendarIcon,
+  Megaphone
 } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -33,6 +35,8 @@ export function DashboardLayout() {
     { name: 'Contacts', href: '/contacts', icon: Users },
     { name: 'Tasks', href: '/tasks', icon: CheckSquare },
     { name: 'Calendar', href: '/calendar', icon: CalendarIcon },
+    { name: 'Invoices', href: '/invoices', icon: FileText },
+    { name: 'Marketing', href: '/marketing', icon: Megaphone },
     { name: 'WhatsApp', href: '/whatsapp', icon: MessageSquare },
   ];
 

@@ -21,8 +21,13 @@ import { ContactsIndex } from './pages/contacts/ContactsIndex';
 import { ContactDetails } from './pages/contacts/ContactDetails';
 import { TasksIndex } from './pages/tasks/TasksIndex';
 import { CalendarView } from './pages/calendar/CalendarView';
+import { InvoicesIndex } from './pages/financials/InvoicesIndex';
+import { InvoiceDetail } from './pages/financials/InvoiceDetail';
 import AdminLayout from './layouts/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import AnalyticsDashboard from './pages/analytics/AnalyticsDashboard';
+import { CampaignsIndex } from './pages/marketing/CampaignsIndex';
+import { CampaignDetail } from './pages/marketing/CampaignDetail';
 
 function App() {
   return (
@@ -36,8 +41,8 @@ function App() {
           </Route>
 
           {/* Protected Dashboard Routes */}
-          <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<DashboardLayout />}>
+            <Route index element={<AnalyticsDashboard />} />
             <Route path="/leads" element={<LeadsIndex />} />
             <Route path="/leads/:id" element={<LeadDetails />} />
             <Route path="/deals" element={<DealsKanban />} />
@@ -48,6 +53,10 @@ function App() {
             <Route path="/accounts/:id" element={<AccountDetails />} />
             <Route path="/tasks" element={<TasksIndex />} />
             <Route path="/calendar" element={<CalendarView />} />
+            <Route path="/invoices" element={<InvoicesIndex />} />
+            <Route path="/invoices/:id" element={<InvoiceDetail />} />
+            <Route path="/marketing" element={<CampaignsIndex />} />
+            <Route path="/marketing/:id" element={<CampaignDetail />} />
             <Route path="/whatsapp" element={<WhatsappChat />} />
             <Route path="/settings" element={<PipelineSettings />} />
             <Route path="/settings/pipelines" element={<PipelineSettings />} />

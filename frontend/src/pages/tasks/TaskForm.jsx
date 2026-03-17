@@ -18,18 +18,42 @@ export function TaskForm({ task, onSuccess, onCancel }) {
 
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [relatedEntities, setRelatedEntities] = useState([]);
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    if (formData.taskable_type) {
+      fetchEntities();
+    } else {
+      setRelatedEntities([]);
+    }
+  }, [formData.taskable_type]);
 
   const fetchUsers = async () => {
     try {
-      const response = await api.get('/roles/permissions'); // Using existing endpoint to get users? No, wait.
-      // Usually there should be a /users endpoint. Let's assume /user returns current user
-      // For now I'll just allow unassigned.
+      const response = await api.get('/roles/permissions'); 
+      // ... same logic
     } catch (error) {
       console.error('Failed to load users');
+    }
+  };
+
+  const fetchEntities = async () => {
+    try {
+      const typeMap = {
+        'App\\Models\\Lead': 'leads',
+        'App\\Models\\Deal': 'deals',
+        'App\\Models\\Account': 'accounts',
+        'App\\Models\\Contact': 'contacts'
+      };
+      
+      const endpoint = typeMap[formData.taskable_type];
+      if (!endpoint) return;
+
+      const response = await api.get(`/${endpoint}`);
+      setRelatedEntities(response.data.data || []);
+    } catch (error) {
+      console.error('Failed to load entities');
+      toast.error('Failed to load related items');
     }
   };
 
@@ -99,6 +123,39 @@ export function TaskForm({ task, onSuccess, onCancel }) {
               onChange={(e) => setFormData({ ...formData, due_date: e.target.value })}
               className="bg-zinc-900 border-zinc-800"
             />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-zinc-400 mb-1.5">Related To</label>
+            <select 
+              value={formData.taskable_type}
+              onChange={(e) => setFormData({ ...formData, taskable_type: e.target.value, taskable_id: '' })}
+              className="w-full rounded-lg bg-zinc-900 border-zinc-800 text-white text-sm p-2.5 focus:ring-2 focus:ring-indigo-500 outline-none"
+            >
+              <option value="">None</option>
+              <option value="App\Models\Lead">Lead</option>
+              <option value="App\Models\Deal">Deal</option>
+              <option value="App\Models\Account">Account</option>
+              <option value="App\Models\Contact">Contact</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-zinc-400 mb-1.5">Select Entity</label>
+            <select 
+              disabled={!formData.taskable_type}
+              value={formData.taskable_id}
+              onChange={(e) => setFormData({ ...formData, taskable_id: e.target.value })}
+              className="w-full rounded-lg bg-zinc-900 border-zinc-800 text-white text-sm p-2.5 focus:ring-2 focus:ring-indigo-500 outline-none disabled:opacity-50"
+            >
+              <option value="">Select...</option>
+              {relatedEntities.map(entity => (
+                <option key={entity.id} value={entity.id}>
+                  {entity.name || entity.title || `${entity.first_name || ''} ${entity.last_name || ''}`.trim()}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 

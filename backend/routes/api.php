@@ -7,6 +7,9 @@ use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\CalendarEventController;
+use App\Http\Controllers\Api\InvoiceController;
+use App\Http\Controllers\Api\EmailCampaignController;
+use App\Http\Controllers\Api\AnalyticsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,13 +73,18 @@ Route::middleware(['auth:sanctum', 'tenant'])->group(function () {
     Route::apiResource('calendar-events', CalendarEventController::class);
 
     // Invoices
-    // Route::apiResource('invoices', InvoiceController::class);
+    Route::apiResource('invoices', \App\Http\Controllers\Api\InvoiceController::class);
 
     // Email Campaigns
-    // Route::apiResource('campaigns', EmailCampaignController::class);
+    Route::apiResource('email-campaigns', EmailCampaignController::class);
+    Route::post('email-campaigns/{campaign}/send', [EmailCampaignController::class, 'send']);
+
+    // Analytics
+    Route::get('analytics/dashboard', [AnalyticsController::class, 'getDashboardStats']);
+    Route::get('analytics/marketing', [AnalyticsController::class, 'getMarketingStats']);
 
     // WhatsApp
-    Route::prefix('whatsapp')->group(function () {
+    Route::group(['prefix' => 'whatsapp'], function () {
         Route::get('/config', [\App\Http\Controllers\Api\WhatsappConfigController::class, 'show']);
         Route::post('/config', [\App\Http\Controllers\Api\WhatsappConfigController::class, 'update']);
         

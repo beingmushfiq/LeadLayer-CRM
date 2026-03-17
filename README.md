@@ -28,15 +28,32 @@
 | ![Tasks Index](docs/screenshots/tasks_index.png) | ![Calendar View](docs/screenshots/calendar_view.png) |
 | *Managing global activities* | *Schedule & Deadlines* |
 
-### 💹 Leads & Pipelines
+### 💹 Financials & Invoices
+- **Automated Billing**: Generate professional invoices with dynamic line items.
+- **Payment Tracking**: Manage payment status from 'Sent' to 'Paid'.
+- **Account Linking**: Connect financial records to Contacts and Deals.
 
-- **Smart Leads**: Track sources, status, and conversion probability.
-- **Deals Kanban**: A visual drag-and-drop board for pipeline management.
-- **Pipeline Customization**: Configure multiple pipelines with dynamic stages.
+### 📣 Marketing Campaigns
+- **Email Outreach**: Design and send multi-recipient email campaigns.
+- **Engagement Analytics**: Track open rates and click rates in real-time.
+- **Audience Segmenting**: Link campaigns to CRM contacts.
 
-### 💬 Communication Hub
-- **WhatsApp Integration**: Native chat interface for customer engagement.
-- **Activity Timeline**: Full audit trail of all interactions for every record.
+### 📊 Advanced Analytics
+- **KPI Command Center**: Real-time business metrics at a glance.
+- **Pipeline Visualization**: Deep insights into deal velocity and value.
+- **Revenue Forecasting**: Historical trends and monthly growth tracking.
+
+#### 📸 Visual Previews
+
+| Tasks Management | Calendar View |
+| :---: | :---: |
+| ![Tasks Index](docs/screenshots/tasks_index.png) | ![Calendar View](docs/screenshots/calendar_view.png) |
+| *Managing global activities* | *Schedule & Deadlines* |
+
+| Financials Module | Marketing Analytics |
+| :---: | :---: |
+| ![Invoices List](docs/screenshots/invoices_list.png) | ![Campaign Detail](docs/screenshots/campaign_detail.png) |
+| *Billing & Payments* | *Outreach Engagement* |
 
 ---
 
@@ -129,9 +146,11 @@ LeadLayer CRM prioritizes **Visual Excellence**.
 ---
 
 ## 🗺️ Roadmap
-- [ ] Phase 8: Financials (Invoices & Payments)
-- [ ] Phase 9: Marketing (Email Campaigns)
-- [ ] Phase 10: Advanced Analytics & AI Insights
+- [x] Phase 7: Tasks & Calendar 🚀
+- [x] Phase 8: Financials (Invoices & Payments) 💳
+- [x] Phase 9: Marketing (Email Campaigns) 📣
+- [x] Phase 10: Advanced Analytics & AI Insights 📊
+- [x] Phase 11: Final Polish & 100% E2E Verification ✨
 
 ---
 
